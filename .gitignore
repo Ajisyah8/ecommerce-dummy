@@ -8,6 +8,7 @@ node_modules/
 .venv/
 filestore/
 sessions/
+backups/
 .odoo-runtime/
 .pytest_cache/
 .mypy_cache/
