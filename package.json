@@ -1,0 +1,23 @@
+{
+  "name": "odoo-community-ecommerce",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Local npm workflow wrapper for Odoo Community e-commerce",
+  "scripts": {
+    "build": "node scripts/odoo.mjs build",
+    "setup-env": "node scripts/odoo.mjs setup-env",
+    "bootstrap": "node scripts/odoo.mjs bootstrap",
+    "odoo": "node scripts/odoo.mjs odoo",
+    "dev": "node scripts/odoo.mjs dev",
+    "start": "node scripts/odoo.mjs start",
+    "migrate": "node scripts/odoo.mjs migrate",
+    "init": "node scripts/odoo.mjs init",
+    "theme": "node scripts/odoo.mjs theme",
+    "seed": "node scripts/odoo.mjs seed",
+    "images": "node scripts/odoo.mjs images",
+    "logs": "node scripts/odoo.mjs logs",
+    "stop": "node scripts/odoo.mjs stop",
+    "restart": "node scripts/odoo.mjs restart",
+    "validate": "node scripts/odoo.mjs validate"
+  }
+}

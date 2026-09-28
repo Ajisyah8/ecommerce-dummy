@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="title desc">
+  <title id="title">Ruang Rasa mark</title>
+  <desc id="desc">A rounded terracotta sun over a dark green arch.</desc>
+  <rect width="80" height="80" rx="24" fill="#1f2a24"/>
+  <circle cx="40" cy="31" r="13" fill="#c56b45"/>
+  <path d="M18 61c4-15 13-22 22-22s18 7 22 22" fill="none" stroke="#f7f1e8" stroke-width="7" stroke-linecap="round"/>
+  <path d="M24 61h32" stroke="#f7f1e8" stroke-width="4" stroke-linecap="round"/>
+</svg>

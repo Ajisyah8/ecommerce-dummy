@@ -1,0 +1,22 @@
+$theme-primary: #25204a;
+$theme-accent: #20c997;
+$theme-soft: #eef2ff;
+
+.ecom-theme-modern {
+    --ecom-primary: #{$theme-primary};
+    --ecom-accent: #{$theme-accent};
+    background: #fff;
+    color: $theme-primary;
+
+    #wrapwrap header#top { background: linear-gradient(90deg, $theme-primary, #473d91); }
+    #wrapwrap header#top a, #wrapwrap header#top .navbar-brand { color: #fff; }
+    #wrapwrap .btn-primary { background-color: $theme-primary; border-color: $theme-primary; border-radius: 999px; }
+    #wrapwrap .o_wsale_product_grid_wrapper .oe_product { border: 0; border-radius: 1.25rem; box-shadow: 0 .5rem 1.5rem rgba(37, 32, 74, .08); }
+    .ecom-site-header { border-bottom: 0; box-shadow: 0 0.5rem 1.5rem rgba(37, 32, 74, .08); }
+    .ecom-hero { background: radial-gradient(circle at 85% 10%, rgba($theme-accent, .22), transparent 35%), $theme-soft; }
+    .ecom-hero .btn-primary, .btn-primary { background-color: $theme-primary; border-color: $theme-primary; }
+    .ecom-promo { background: linear-gradient(120deg, $theme-primary, #473d91); color: #fff; }
+    .ecom-product-card { border: 0; border-radius: 1.25rem; box-shadow: 0 .5rem 1.5rem rgba(37, 32, 74, .08); }
+    .ecom-product-card:hover { transform: translateY(-.25rem); box-shadow: 0 1rem 2rem rgba(37, 32, 74, .14); }
+    a { color: $theme-primary; }
+}

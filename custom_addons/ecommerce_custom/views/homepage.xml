@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="homepage" name="E-Commerce Homepage">
+        <t t-call="website.layout">
+            <div id="wrap" class="oe_structure o_ecommerce_homepage">
+                <section class="ecom-hero py-5 py-lg-6">
+                    <div class="container py-4 py-lg-5">
+                        <div class="row align-items-center g-4">
+                            <div class="col-lg-7">
+                                <p class="text-uppercase small fw-semibold mb-3 text-primary">The everyday edit</p>
+                                <h1 class="display-3 fw-bold mb-3">Ruang kecil untuk hal-hal yang berarti.</h1>
+                                <p class="lead text-muted mb-4">Kurasi produk untuk rumah, gaya hidup, dan meja kerja yang terasa lebih personal.</p>
+                                <a href="/shop" class="btn btn-primary btn-lg px-4">Lihat semua produk</a>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="ecom-hero-card rounded-4 p-4 p-lg-5">
+                                    <span class="badge text-bg-light mb-4">Curated for living</span>
+                                    <h2 class="h3 fw-bold">Barang bagus, dipilih dengan sengaja.</h2>
+                                    <p class="mb-0 text-muted">Temukan detail kecil yang membuat rutinitas terasa lebih baik.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-5" t-if="ecommerce_categories">
+                    <div class="container">
+                        <div class="d-flex justify-content-between align-items-end mb-4">
+                            <div>
+                                <p class="text-uppercase small fw-semibold text-primary mb-2">Jelajahi</p>
+                                <h2 class="h3 mb-0">Kategori produk</h2>
+                            </div>
+                            <a href="/shop" class="link-primary">Semua produk</a>
+                        </div>
+                        <div class="row row-cols-2 row-cols-md-4 g-3">
+                            <div class="col" t-foreach="ecommerce_categories" t-as="category">
+                                <a t-att-href="'/shop/category/%s' % category.id" class="ecom-category-card d-block rounded-3 p-4 text-decoration-none h-100">
+                                    <h3 class="h6 mb-1 text-dark" t-out="category.name"/>
+                                    <span class="small text-muted">Lihat produk</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ecom-trust-strip py-4 border-top border-bottom">
+                    <div class="container">
+                        <div class="row row-cols-2 row-cols-lg-4 g-4 text-center text-lg-start">
+                            <div class="col"><strong class="d-block">Pengiriman cepat</strong><span class="small text-muted">Diproses dari gudang lokal.</span></div>
+                            <div class="col"><strong class="d-block">Pembayaran aman</strong><span class="small text-muted">Checkout resmi Odoo.</span></div>
+                            <div class="col"><strong class="d-block">Produk terkurasi</strong><span class="small text-muted">Dipilih untuk kebutuhan harian.</span></div>
+                            <div class="col"><strong class="d-block">Dukungan pelanggan</strong><span class="small text-muted">Kami siap membantu Anda.</span></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-5 bg-light" t-if="featured_products">
+                    <div class="container">
+                                <p class="text-uppercase small fw-semibold text-primary mb-2">Editor’s picks</p>
+                                <h2 class="h3 mb-4">Pilihan yang paling kami suka</h2>
+                        <div class="row row-cols-2 row-cols-lg-4 g-4">
+                            <t t-foreach="featured_products" t-as="product">
+                                <t t-call="ecommerce_custom.product_card">
+                                    <t t-set="product_record" t-value="product"/>
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-5" t-if="promotional_products">
+                    <div class="container">
+                        <div class="ecom-promo rounded-4 p-4 p-lg-5">
+                            <div class="row align-items-center g-4">
+                                <div class="col-lg-4">
+                                    <p class="text-uppercase small fw-semibold mb-2">Penawaran terbatas</p>
+                                    <h2 class="h3 mb-0">Dapatkan lebih banyak dari produk pilihan.</h2>
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="row row-cols-2 row-cols-md-4 g-3">
+                                        <t t-foreach="promotional_products" t-as="product">
+                                            <t t-call="ecommerce_custom.product_card">
+                                                <t t-set="product_record" t-value="product"/>
+                                            </t>
+                                        </t>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="py-5" t-if="new_products">
+                    <div class="container">
+                        <p class="text-uppercase small fw-semibold text-primary mb-2">Baru hadir</p>
+                        <h2 class="h3 mb-4">Produk terbaru</h2>
+                        <div class="row row-cols-2 row-cols-lg-4 g-4">
+                            <t t-foreach="new_products" t-as="product">
+                                <t t-call="ecommerce_custom.product_card">
+                                    <t t-set="product_record" t-value="product"/>
+                                </t>
+                            </t>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="ecom-manifesto py-5 py-lg-6">
+                    <div class="container">
+                        <div class="row align-items-center g-5">
+                            <div class="col-lg-5">
+                                <p class="text-uppercase small fw-semibold text-primary mb-2">Our point of view</p>
+                                <h2 class="display-6 fw-bold mb-3">Lebih sedikit, lebih bermakna.</h2>
+                                <p class="lead text-muted mb-0">Kami percaya benda yang baik tidak perlu berisik. Setiap produk dipilih karena fungsi, material, dan rasa yang dibawanya ke ruang Anda.</p>
+                            </div>
+                            <div class="col-lg-7">
+                                <div class="ecom-manifesto-grid">
+                                    <div class="ecom-manifesto-item"><span>01</span><strong>Dipilih dengan rasa</strong><small>Bukan sekadar memenuhi rak.</small></div>
+                                    <div class="ecom-manifesto-item"><span>02</span><strong>Dibuat untuk dipakai</strong><small>Indah, praktis, dan tahan lama.</small></div>
+                                    <div class="ecom-manifesto-item"><span>03</span><strong>Dikirim dengan peduli</strong><small>Rapi sejak keluar dari gudang.</small></div>
+                                    <div class="ecom-manifesto-item"><span>04</span><strong>Selalu terasa personal</strong><small>Karena rumah adalah cerita Anda.</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </t>
+    </template>
+
+    <template id="product_card" name="E-Commerce Product Card">
+        <div class="col">
+            <article class="card h-100 border-0 shadow-sm ecom-product-card overflow-hidden">
+                <a t-att-href="product_record.website_url" class="text-decoration-none">
+                    <div class="ratio ratio-1x1 bg-light">
+                        <t t-set="category_names" t-value="' '.join(product_record.public_categ_ids.mapped('name'))"/>
+                        <img t-if="product_record.image_512" t-att-src="'/web/image/product.template/%s/image_512' % product_record.id" t-att-alt="product_record.name" class="object-fit-cover" loading="lazy"/>
+                        <img t-elif="'Fashion' in category_names" src="/ecommerce_custom/static/src/img/product-fashion.svg" t-att-alt="product_record.name" class="object-fit-cover" loading="lazy"/>
+                        <img t-elif="'Home' in category_names" src="/ecommerce_custom/static/src/img/product-home.svg" t-att-alt="product_record.name" class="object-fit-cover" loading="lazy"/>
+                        <img t-elif="'Tech' in category_names" src="/ecommerce_custom/static/src/img/product-tech.svg" t-att-alt="product_record.name" class="object-fit-cover" loading="lazy"/>
+                        <img t-else="" src="/ecommerce_custom/static/src/img/product-wellness.svg" t-att-alt="product_record.name" class="object-fit-cover" loading="lazy"/>
+                    </div>
+                </a>
+                <div class="card-body d-flex flex-column p-3">
+                    <span t-if="product_record.is_promotional and product_record.promotion_label" class="badge text-bg-primary align-self-start mb-2" t-out="product_record.promotion_label"/>
+                    <h3 class="h6 mb-2">
+                        <a t-att-href="product_record.website_url" class="text-dark text-decoration-none" t-out="product_record.name"/>
+                    </h3>
+                    <div class="mt-auto">
+                        <t t-set="combination_info" t-value="product_record.product_variant_id._get_combination_info_variant()"/>
+                        <span class="fw-semibold" t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </template>
+</odoo>

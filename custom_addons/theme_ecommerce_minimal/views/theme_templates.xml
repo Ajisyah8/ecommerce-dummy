@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="theme_ecommerce_minimal_layout" inherit_id="website.layout" name="Minimal e-commerce theme layout">
+        <xpath expr="//body" position="attributes">
+            <attribute name="class" add="ecom-theme-minimal" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

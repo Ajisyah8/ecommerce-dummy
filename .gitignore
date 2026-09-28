@@ -1,0 +1,17 @@
+.env
+*.pyc
+__pycache__/
+*.log
+.vscode/
+.idea/
+node_modules/
+.venv/
+filestore/
+sessions/
+.odoo-runtime/
+.pytest_cache/
+.mypy_cache/
+*.egg-info/
+image.png
+odoo/
+odoo/.venv/

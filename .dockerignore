@@ -1,0 +1,12 @@
+.git
+.gitignore
+.env
+filestore
+sessions
+*.log
+odoo/.git
+odoo/.github
+odoo/doc
+odoo/setup
+odoo/debian
+custom_addons/*/tests/__pycache__

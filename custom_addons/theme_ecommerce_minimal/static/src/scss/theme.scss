@@ -1,0 +1,21 @@
+$theme-primary: #17324d;
+$theme-accent: #e07a5f;
+$theme-soft: #f5f1eb;
+
+.ecom-theme-minimal {
+    --ecom-primary: #{$theme-primary};
+    --ecom-accent: #{$theme-accent};
+    background: #fff;
+    color: $theme-primary;
+
+    #wrapwrap header#top { background: #fff; }
+    #wrapwrap .btn-primary { background-color: $theme-primary; border-color: $theme-primary; }
+    #wrapwrap .o_wsale_product_grid_wrapper .oe_product { border-radius: 1rem; }
+    .ecom-site-header { border-bottom-color: rgba($theme-primary, .12); }
+    .ecom-hero { background: linear-gradient(135deg, $theme-soft, #fff); }
+    .ecom-hero .btn-primary, .btn-primary { background-color: $theme-primary; border-color: $theme-primary; }
+    .ecom-promo { background: $theme-primary; color: #fff; }
+    .ecom-product-card { border-color: rgba($theme-primary, .12); border-radius: 1rem; }
+    .ecom-product-card:hover { border-color: $theme-accent; }
+    a { color: $theme-primary; }
+}

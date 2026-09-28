@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="frontend_layout" inherit_id="website.layout" name="E-Commerce Frontend Layout">
+        <xpath expr="//div[@id='wrapwrap']" position="before">
+            <a href="#wrapwrap" class="ecom-skip-link">Skip to main content</a>
+        </xpath>
+        <xpath expr="//header" position="before">
+            <div class="ecom-announcement text-center">
+                <div class="container">Koleksi baru untuk ritual sehari-hari <span aria-hidden="true">·</span> <a href="/shop">Belanja sekarang</a></div>
+            </div>
+        </xpath>
+        <xpath expr="//header" position="attributes">
+            <attribute name="t-attf-class" add="ecom-site-header" separator=" "/>
+        </xpath>
+        <xpath expr="//footer[@id='bottom']" position="inside">
+            <div class="container ecom-footer-content py-5">
+                <div class="row g-4">
+                    <div class="col-12 col-md-5">
+                        <a href="/" class="ecom-footer-brand d-inline-flex align-items-center gap-2 mb-3">
+                            <img src="/ecommerce_custom/static/src/img/brand-mark.svg" width="36" height="36" alt="Ruang Rasa"/>
+                            <span><strong>Ruang Rasa</strong><small class="d-block">everyday objects</small></span>
+                        </a>
+                        <p class="text-muted mb-0">Objek sehari-hari yang dipilih dengan rasa, dibuat untuk menemani ritme hidup Anda.</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <h2 class="h6">Belanja</h2>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="/shop">Semua produk</a></li>
+                            <li><a href="/shop/cart">Keranjang</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <h2 class="h6">Akun</h2>
+                        <ul class="list-unstyled mb-0">
+                            <li><a href="/my/orders">Riwayat pesanan</a></li>
+                            <li><a href="/my/account">Profil dan alamat</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <h2 class="h6">Dapatkan kabar baik</h2>
+                        <p class="small text-muted">Cerita, produk baru, dan pilihan editor langsung ke inbox Anda.</p>
+                        <a href="/shop" class="btn btn-sm ecom-footer-cta">Jelajahi koleksi <span aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+                <div class="ecom-footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2 mt-5 pt-3">
+                    <span class="small text-muted">© Ruang Rasa · Made for everyday living</span>
+                    <span class="small text-muted">Community Edition · Odoo</span>
+                </div>
+            </div>
+        </xpath>
+    </template>
+
+    <template id="frontend_brand_logo" inherit_id="website.option_header_brand_logo" name="Ruang Rasa Header Brand">
+        <xpath expr="//a[@data-name='Navbar Logo']" position="replace">
+            <a data-name="Navbar Logo" href="/" class="navbar-brand ecom-brand d-flex align-items-center gap-2">
+                <img src="/ecommerce_custom/static/src/img/brand-mark.svg" width="40" height="40" alt="Ruang Rasa" class="ecom-brand-mark"/>
+                <span class="ecom-brand-lockup">
+                    <strong>Ruang Rasa</strong>
+                    <small>everyday objects</small>
+                </span>
+            </a>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="ecommerce_custom_frontend_assets" inherit_id="website.layout">
+        <xpath expr="//body" position="attributes">
+            <attribute name="data-ecommerce-community">1</attribute>
+        </xpath>
+    </template>
+</odoo>

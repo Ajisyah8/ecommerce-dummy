@@ -1,0 +1,38 @@
+{
+    "name": "E-Commerce Custom",
+    "summary": "Community-only e-commerce presentation and extension layer",
+    "version": "19.0.1.0.0",
+    "category": "Website/Website",
+    "license": "LGPL-3",
+    "author": "Project Team",
+    "depends": [
+        "auth_signup",
+        "delivery",
+        "payment",
+        "payment_custom",
+        "portal",
+        "product",
+        "sale",
+        "stock",
+        "website",
+        "website_sale",
+    ],
+    "data": [
+        "security/ir.model.access.csv",
+        "data/demo_catalog.xml",
+        "views/product_views.xml",
+        "views/product_detail.xml",
+        "views/homepage.xml",
+        "views/portal_templates.xml",
+        "views/frontend.xml",
+        "views/website_templates.xml",
+    ],
+    "assets": {
+        "web.assets_frontend": [
+            "ecommerce_custom/static/src/scss/ecommerce.scss",
+            "ecommerce_custom/static/src/js/ecommerce.js",
+        ],
+    },
+    "installable": True,
+    "application": True,
+}

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="product_stock_status" inherit_id="website_sale.product" name="Product Stock Status">
+        <xpath expr="//div[contains(@class, 'o_wsale_product_details_content_section_cta')]" position="before">
+            <div t-if="product_variant" class="ecom-stock-status mb-3">
+                <span t-if="product_variant.free_qty &gt; 0" class="badge text-bg-success">
+                    Tersedia
+                </span>
+                <span t-else="" class="badge text-bg-secondary">
+                    Stok habis
+                </span>
+            </div>
+        </xpath>
+    </template>
+</odoo>

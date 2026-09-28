@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="public_category_fashion" model="product.public.category">
+        <field name="name">Fashion &amp; Accessories</field>
+        <field name="sequence">10</field>
+        <field name="website_description">Daily essentials with a clean, modern look.</field>
+    </record>
+    <record id="public_category_home" model="product.public.category">
+        <field name="name">Home &amp; Living</field>
+        <field name="sequence">20</field>
+        <field name="website_description">Thoughtful pieces for a more comfortable home.</field>
+    </record>
+    <record id="public_category_tech" model="product.public.category">
+        <field name="name">Tech &amp; Workspace</field>
+        <field name="sequence">30</field>
+        <field name="website_description">Simple technology for work and everyday life.</field>
+    </record>
+    <record id="public_category_wellness" model="product.public.category">
+        <field name="name">Wellness</field>
+        <field name="sequence">40</field>
+        <field name="website_description">Small rituals for better days.</field>
+    </record>
+
+    <record id="product_cotton_tshirt" model="product.template">
+        <field name="name">Essential Cotton T-Shirt</field>
+        <field name="default_code">EC-TSH-001</field>
+        <field name="list_price">149000</field>
+        <field name="weight">0.25</field>
+        <field name="description_sale">A soft everyday cotton t-shirt with a relaxed fit.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_fashion')])]"/>
+        <field name="website_sequence">10</field>
+        <field name="is_published">True</field>
+        <field name="is_featured">True</field>
+    </record>
+    <record id="product_everyday_sneakers" model="product.template">
+        <field name="name">Everyday Canvas Sneakers</field>
+        <field name="default_code">EC-SNK-002</field>
+        <field name="list_price">399000</field>
+        <field name="weight">0.75</field>
+        <field name="description_sale">Lightweight canvas sneakers made for daily movement.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_fashion')])]"/>
+        <field name="website_sequence">20</field>
+        <field name="is_published">True</field>
+        <field name="is_featured">True</field>
+        <field name="is_promotional">True</field>
+        <field name="promotion_label">Best seller</field>
+    </record>
+    <record id="product_canvas_tote" model="product.template">
+        <field name="name">Daily Canvas Tote</field>
+        <field name="default_code">EC-TOT-003</field>
+        <field name="list_price">129000</field>
+        <field name="weight">0.35</field>
+        <field name="description_sale">A durable, roomy tote for work, errands, and weekends.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_fashion')])]"/>
+        <field name="website_sequence">30</field>
+        <field name="is_published">True</field>
+        <field name="is_promotional">True</field>
+        <field name="promotion_label">New arrival</field>
+    </record>
+    <record id="product_desk_lamp" model="product.template">
+        <field name="name">Arc Desk Lamp</field>
+        <field name="default_code">EC-HOM-101</field>
+        <field name="list_price">549000</field>
+        <field name="weight">1.20</field>
+        <field name="description_sale">A warm, adjustable desk lamp for focused evenings.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_home')])]"/>
+        <field name="website_sequence">40</field>
+        <field name="is_published">True</field>
+        <field name="is_featured">True</field>
+    </record>
+    <record id="product_ceramic_coffee_set" model="product.template">
+        <field name="name">Ceramic Coffee Set</field>
+        <field name="default_code">EC-HOM-102</field>
+        <field name="list_price">289000</field>
+        <field name="weight">1.00</field>
+        <field name="description_sale">Hand-finished ceramic cups for slow mornings and good conversations.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_home')])]"/>
+        <field name="website_sequence">50</field>
+        <field name="is_published">True</field>
+    </record>
+    <record id="product_wireless_speaker" model="product.template">
+        <field name="name">Pocket Wireless Speaker</field>
+        <field name="default_code">EC-TEC-201</field>
+        <field name="list_price">699000</field>
+        <field name="weight">0.48</field>
+        <field name="description_sale">Compact wireless sound with an all-day battery.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_tech')])]"/>
+        <field name="website_sequence">60</field>
+        <field name="is_published">True</field>
+        <field name="is_featured">True</field>
+        <field name="is_promotional">True</field>
+        <field name="promotion_label">Limited offer</field>
+    </record>
+    <record id="product_desk_organizer" model="product.template">
+        <field name="name">Modular Desk Organizer</field>
+        <field name="default_code">EC-TEC-202</field>
+        <field name="list_price">179000</field>
+        <field name="weight">0.60</field>
+        <field name="description_sale">Keep your essentials close with a flexible modular organizer.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_tech')])]"/>
+        <field name="website_sequence">70</field>
+        <field name="is_published">True</field>
+        <field name="is_promotional">True</field>
+        <field name="promotion_label">New arrival</field>
+    </record>
+    <record id="product_aroma_candle" model="product.template">
+        <field name="name">Sandalwood Aroma Candle</field>
+        <field name="default_code">EC-WEL-301</field>
+        <field name="list_price">159000</field>
+        <field name="weight">0.40</field>
+        <field name="description_sale">A warm sandalwood candle to reset your space and your pace.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_wellness')])]"/>
+        <field name="website_sequence">80</field>
+        <field name="is_published">True</field>
+        <field name="is_featured">True</field>
+    </record>
+    <record id="product_daily_care_set" model="product.template">
+        <field name="name">Daily Care Starter Set</field>
+        <field name="default_code">EC-WEL-302</field>
+        <field name="list_price">249000</field>
+        <field name="weight">0.65</field>
+        <field name="description_sale">A simple starter set for a calm, consistent daily routine.</field>
+        <field name="public_categ_ids" eval="[(6, 0, [ref('public_category_wellness')])]"/>
+        <field name="website_sequence">90</field>
+        <field name="is_published">True</field>
+        <field name="is_promotional">True</field>
+        <field name="promotion_label">Bundle</field>
+    </record>
+</odoo>

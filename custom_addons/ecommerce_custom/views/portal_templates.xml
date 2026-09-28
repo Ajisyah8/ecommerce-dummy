@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="portal_my_orders_ecommerce_status" inherit_id="sale.portal_my_orders" name="Customer Order Statuses">
+        <xpath expr="//th[@name='order_total']" position="before">
+            <th name="order_status" class="text-center d-none d-lg-table-cell">Status</th>
+            <th name="payment_status" class="text-center d-none d-lg-table-cell">Payment</th>
+            <th name="shipping_status" class="text-center d-none d-lg-table-cell">Shipping</th>
+        </xpath>
+        <xpath expr="//td[@name='order_amount_total']" position="before">
+            <td class="text-center d-none d-lg-table-cell">
+                <span t-if="order.state == 'sale'" class="badge rounded-pill text-bg-success">Confirmed</span>
+                <span t-elif="order.state == 'cancel'" class="badge rounded-pill text-bg-danger">Cancelled</span>
+                <span t-else="" class="badge rounded-pill text-bg-secondary" t-out="dict(draft='Draft', sent='Quotation').get(order.state, order.state)"/>
+            </td>
+            <td class="text-center d-none d-lg-table-cell">
+                <span t-if="order.amount_paid &gt;= order.amount_total" class="badge rounded-pill text-bg-success">Paid</span>
+                <span t-elif="order.amount_paid &gt; 0" class="badge rounded-pill text-bg-warning">Partial</span>
+                <span t-else="" class="badge rounded-pill text-bg-secondary">Unpaid</span>
+            </td>
+            <td class="text-center d-none d-lg-table-cell">
+                <t t-set="picking_states" t-value="order.picking_ids.mapped('state')"/>
+                <span t-if="not picking_states" class="badge rounded-pill text-bg-light">-</span>
+                <span t-elif="all(state == 'done' for state in picking_states)" class="badge rounded-pill text-bg-success">Shipped</span>
+                <span t-elif="'assigned' in picking_states or 'confirmed' in picking_states" class="badge rounded-pill text-bg-info">Processing</span>
+                <span t-else="" class="badge rounded-pill text-bg-secondary">Pending</span>
+            </td>
+        </xpath>
+    </template>
+
+    <template id="sale_order_portal_status_summary" inherit_id="sale.sale_order_portal_template" name="Customer Order Status Summary">
+        <xpath expr="//div[@id='quote_content']" position="before">
+            <div class="col-12 mb-4 order-first order-lg-0">
+                <div class="row g-3">
+                    <div class="col-12 col-md-4">
+                        <div class="card border-0 bg-light h-100">
+                            <div class="card-body">
+                                <small class="text-muted d-block mb-1">Order status</small>
+                                <strong t-out="dict(draft='Draft', sent='Quotation', sale='Confirmed', cancel='Cancelled').get(sale_order.state, sale_order.state)"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card border-0 bg-light h-100">
+                            <div class="card-body">
+                                <small class="text-muted d-block mb-1">Payment status</small>
+                                <strong t-if="sale_order.amount_paid &gt;= sale_order.amount_total">Paid</strong>
+                                <strong t-elif="sale_order.amount_paid &gt; 0">Partially paid</strong>
+                                <strong t-else="">Unpaid</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="card border-0 bg-light h-100">
+                            <div class="card-body">
+                                <small class="text-muted d-block mb-1">Shipping status</small>
+                                <t t-set="picking_states" t-value="sale_order.picking_ids.mapped('state')"/>
+                                <strong t-if="not picking_states">Not applicable</strong>
+                                <strong t-elif="all(state == 'done' for state in picking_states)">Shipped</strong>
+                                <strong t-elif="'assigned' in picking_states or 'confirmed' in picking_states">Processing</strong>
+                                <strong t-else="">Pending</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="theme_ecommerce_fashion_layout" inherit_id="website.layout" name="Fashion e-commerce theme layout">
+        <xpath expr="//body" position="attributes">
+            <attribute name="class" add="ecom-theme-fashion" separator=" "/>
+        </xpath>
+    </template>
+</odoo>

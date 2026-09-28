@@ -1,0 +1,23 @@
+$theme-primary: #3a1830;
+$theme-accent: #b85c7a;
+$theme-soft: #fff4f6;
+
+.ecom-theme-fashion {
+    --ecom-primary: #{$theme-primary};
+    --ecom-accent: #{$theme-accent};
+    background: #fff;
+    color: $theme-primary;
+
+    #wrapwrap header#top { background: $theme-primary; }
+    #wrapwrap header#top a, #wrapwrap header#top .navbar-brand { color: #fff; }
+    #wrapwrap .btn-primary { background-color: $theme-primary; border-color: $theme-primary; text-transform: uppercase; letter-spacing: .08em; }
+    #wrapwrap .o_wsale_product_grid_wrapper .oe_product { border-radius: 0; }
+    .ecom-site-header { border-bottom-color: rgba($theme-primary, .16); }
+    .ecom-hero { background: linear-gradient(135deg, $theme-soft 0%, #fff 70%); }
+    .ecom-hero h1 { letter-spacing: -.04em; }
+    .ecom-hero .btn-primary, .btn-primary { background-color: $theme-primary; border-color: $theme-primary; }
+    .ecom-promo { background: $theme-accent; color: #fff; }
+    .ecom-product-card { border-color: rgba($theme-primary, .16); border-radius: 0; }
+    .ecom-product-card:hover { border-color: $theme-accent; }
+    a { color: $theme-primary; }
+}
