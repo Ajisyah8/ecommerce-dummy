@@ -60,11 +60,14 @@ The project relies on Odoo's native portal access CSV and record rules for `sale
 ```powershell
 Copy-Item .env.example .env
 # Edit .env and replace both passwords.
+npm run odoo:clone
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r odoo\requirements.txt
 npm run odoo
 ```
+
+The `odoo/` directory is intentionally ignored by Git because it is the upstream Odoo Community source. On a fresh checkout, run `npm run odoo:clone` to fetch the official `19.0` branch. Never add Odoo Enterprise or force-add `odoo/` to this project repository.
 
 The native workflow runs `odoo/odoo-bin` directly. PostgreSQL must already be running on `localhost:5432`. On the first run, create a database from Odoo's database manager using the `ODOO_ADMIN_PASSWORD` from `.env`; then stop Odoo with `Ctrl+C`, install the modules, and start it again:
 

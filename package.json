@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node scripts/odoo.mjs build",
     "setup-env": "node scripts/odoo.mjs setup-env",
+    "odoo:clone": "node scripts/fetch-odoo.mjs",
     "bootstrap": "node scripts/odoo.mjs bootstrap",
     "odoo": "node scripts/odoo.mjs odoo",
     "dev": "node scripts/odoo.mjs dev",
