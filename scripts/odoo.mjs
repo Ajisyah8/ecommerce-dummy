@@ -57,9 +57,11 @@ function nativeConfig() {
     `db_port = ${env.POSTGRES_PORT || "5432"}\n` +
     `db_user = ${env.POSTGRES_USER || "odoo"}\n` +
     `db_password = ${env.POSTGRES_PASSWORD || ""}\n` +
+    `db_name = ${env.POSTGRES_DB || "odoo"}\n` +
     `addons_path = ${join(root, "odoo", "odoo", "addons")},${join(root, "odoo", "addons")},${join(root, "custom_addons")}\n` +
     `http_port = ${env.ODOO_HTTP_PORT || "8077"}\n` +
     `http_interface = 127.0.0.1\n` +
+    `dbfilter = ^${env.POSTGRES_DB || "odoo"}$\n` +
     `data_dir = ${join(runtime, "data")}\n` +
     `list_db = True\nlog_level = info\n`;
   writeFileSync(configPath, config, "utf8");
@@ -163,15 +165,15 @@ switch (command) {
     console.log("Odoo is available at http://localhost:8077");
     break;
   case "dev":
-    runNative();
+    runNative(["-d", readEnvFile().POSTGRES_DB || "odoo"]);
     console.log("Odoo is available at http://localhost:8077");
     break;
   case "odoo":
-    runNative();
+    runNative(["-d", readEnvFile().POSTGRES_DB || "odoo"]);
     console.log("Odoo is available at http://localhost:8077");
     break;
   case "start":
-    runNative();
+    runNative(["-d", readEnvFile().POSTGRES_DB || "odoo"]);
     break;
   case "migrate":
     runNative(["-d", readEnvFile().POSTGRES_DB || "odoo", "--stop-after-init", "--update", requestedModules]);
